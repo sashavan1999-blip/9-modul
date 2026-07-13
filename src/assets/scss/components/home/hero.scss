@@ -2,64 +2,64 @@
     padding-top: 87px;
     padding-bottom: 141px;
     @include mini-desktop {
-                padding: 67px 0 121px;
-            }
+        padding: 67px 0 121px;
+    }
 
-    @include mobile {
-                min-height: calc(100dvh - 128px);
-            }
+    // @include mobile {
+    //     min-height: calc(100dvh - 109px);
+    // }
 
     &::before {
-            top: 50px;
-            left: 181px;
-            width: 551px;
-            height: 551px;
-            background-color: #fa7515;
-            opacity: 0.25;
-            filter: blur(220px);
+        top: 50px;
+        left: 181px;
+        width: 551px;
+        height: 551px;
+        background-color: #fa7515;
+        opacity: 0.25;
+        filter: blur(220px);
 
-            @include mini-desktop {
-                left: 80px;
-                width: 351px;
-                height: 351px;
-            }
-
-            @include small-tablet {
-                width: 251px;
-                height: 251px;
-            }
+        @include mini-desktop {
+            left: 80px;
+            width: 351px;
+            height: 351px;
         }
 
-        &::after {
-            bottom: -50px;
-            right: 70px;
-            width: 551px;
-            height: 551px;
-            background-color: var(--success-color-70);
-            filter: blur(180px);
-            opacity: 0.25;
-
-            @include mini-desktop {
-                width: 325px;
-                height: 325px;
-            }
-
-            @include small-tablet {
-                left: 40px;
-                top: 20px;
-                width: 225px;
-                height: 225px;
-            }
+        @include small-tablet {
+            width: 251px;
+            height: 251px;
         }
-        
-        &::after,
-        &::before {
-            content: '';
-            position: absolute;
-            display: inline-block;
-            border-radius: 50%;
-            z-index: var(--z-index-0);
+    }
+
+    &::after {
+        bottom: -50px;
+        right: 70px;
+        width: 551px;
+        height: 551px;
+        background-color: var(--success-color-70);
+        filter: blur(180px);
+        opacity: 0.25;
+
+        @include mini-desktop {
+            width: 325px;
+            height: 325px;
         }
+
+        @include small-tablet {
+            left: 40px;
+            top: 20px;
+            width: 225px;
+            height: 225px;
+        }
+    }
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        border-radius: 50%;
+        z-index: var(--z-index-0);
+    }
 
     &__container {
         @include flex-justify-between;
@@ -72,11 +72,12 @@
             align-items: center;
             text-align: center;
         }
-        
     }
 
     &__left {
-        max-width: 590px;
+        @include mini-desktop {
+            max-width: 617px;
+        }
     }
 
     &__title {
@@ -88,31 +89,37 @@
         color: var(--neutral-color-100);
 
         @include mini-desktop {
-                margin-bottom: 74px;
-            }
+            margin-bottom: 74px;
+        }
 
         @include tablet {
             margin-bottom: 44px;
-                font-size: 60px;
-            }
+            font-size: 60px;
+        }
 
         @include mobile {
             margin-bottom: 38px;
-                font-size: 48px;
-            }
+            font-size: 48px;
+        }
 
         @include small-mobile {
             margin-bottom: 30px;
-                font-size: 38px;
-            }
+            font-size: 38px;
+        }
     }
 
     &__subtitle {
         margin-bottom: 69px;
 
-        @include mini-desktop {
-                justify-content: center;
+        & br {
+            @include mini-desktop {
+                display: none;
             }
+        }
+
+        @include mini-desktop {
+            justify-content: center;
+        }
     }
 
     &__form {
@@ -161,8 +168,8 @@
         margin-right: 20px;
 
         @include mini-desktop {
-                display: none;
-            }
+            display: none;
+        }
     }
 
     &__sales {
@@ -198,12 +205,12 @@
 
         @include small-desktop {
             top: 0px;
-            right: -100px;
+            right: -20px;
         }
 
         @include mini-desktop {
-                padding: 67px 0 121px;
-            }
+            padding: 67px 0 121px;
+        }
 
         &-title {
             margin-bottom: 12px;
@@ -230,14 +237,17 @@
         text-align: left;
 
         &-head {
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 143%;
-            color: #5c616f;
-        }
-
-        &-body {
             &-th {
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 143%;
+                color: #5c616f;
+            }
+        }
+        
+        &-body {
+            &-td {
+                white-space: nowrap;
                 font-weight: 700;
                 font-size: 20px;
                 line-height: 130%;
