@@ -1,0 +1,13 @@
+.insight {
+    &__container {
+        border-top: 1px solid var(--neutral-color-30);
+        padding-top: 160px;
+        padding-bottom: 91px;
+    }
+
+    &__title {
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        color: var;
+    }
+}
